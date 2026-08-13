@@ -19,21 +19,19 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Password is required"],
       minlength: 6,
-      select: false, // password will never be returned by default in queries
+      select: false,
     },
   },
   { timestamps: true }
 );
 
-// Hash the password before saving to the database
-userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next();
+// Hash the password before saving — async function, NO next needed
+userSchema.pre("save", async function () {
+  if (!this.isModified("password")) return;
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
-  next();
 });
 
-// Compare entered password with hashed password (used during login)
 userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };

@@ -28,12 +28,12 @@ app.get("/", (req, res) => {
 });
 
 // ---------- Routes (uncomment as you build them) ----------
-// import authRoutes from "./routes/authRoutes.js";
-// import applicationRoutes from "./routes/applicationRoutes.js";
-// import aiRoutes from "./routes/aiRoutes.js";
-// app.use("/api/auth", authRoutes);
-// app.use("/api/applications", applicationRoutes);
-// app.use("/api/ai", aiRoutes);
+ import authRoutes from "./routes/authRoutes.js";
+import applicationRoutes from "./routes/applicationRoutes.js";
+ import aiRoutes from "./routes/aiRoutes.js";
+ app.use("/api/auth", authRoutes);
+ app.use("/api/applications", applicationRoutes);
+ app.use("/api/ai", aiRoutes);
 
 // ---------- Error handling (add after building middleware/errorHandler.js) ----------
 // import { notFound, errorHandler } from "./middleware/errorHandler.js";
