@@ -3,8 +3,6 @@ import parseResume from "../utils/parseResume.js";
 import Application from "../models/Application.js";
 import fs from "fs";
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-
 // @route  POST /api/ai/match/:applicationId
 // @desc   Upload resume, compare with job description, save match score
 export const matchResume = async (req, res) => {
@@ -42,7 +40,8 @@ JOB DESCRIPTION:
 ${jobDescription}
 `;
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     const result = await model.generateContent(prompt);
     let responseText = result.response.text();
 
