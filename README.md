@@ -95,6 +95,7 @@ App runs on http://localhost:5173
 | DELETE | /api/applications/:id | Delete an application |
 | POST | /api/ai/match/:applicationId | Upload resume + job description, get AI match score |
 
+
 ## Author
 
 **Mitali Pandey**
