@@ -42,6 +42,7 @@ jobTrackerAI/
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (v18+)
 - MongoDB Atlas account (free tier works)
 - Google Gemini API key from aistudio.google.com/apikey
@@ -55,7 +56,6 @@ cd jobTrackerAI
 
 cd backend
 npm install
-
 
 Run the backend:
 
@@ -82,20 +82,18 @@ App runs on http://localhost:5173
 
 ## API Endpoints
 
-| Method | Endpoint | Description | Auth Required |
-|--------|----------|--------------|----------------|
-| POST | /api/auth/register | Register a new user | No |
-| POST | /api/auth/login | Log in | No |
-| POST | /api/auth/logout | Log out | Yes |
-| GET | /api/auth/me | Get current logged-in user | Yes |
-| GET | /api/applications | Get all applications for the user | Yes |
-| POST | /api/applications | Create a new application | Yes |
-| GET | /api/applications/:id | Get a single application | Yes |
-| PUT | /api/applications/:id | Update an application | Yes |
-| DELETE | /api/applications/:id | Delete an application | Yes |
-| POST | /api/ai/match/:applicationId | Upload resume + job description, get AI match score | Yes |
-
-
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /api/auth/register | Register a new user |
+| POST | /api/auth/login | Log in |
+| POST | /api/auth/logout | Log out |
+| GET | /api/auth/me | Get current logged-in user |
+| GET | /api/applications | Get all applications for the user |
+| POST | /api/applications | Create a new application |
+| GET | /api/applications/:id | Get a single application |
+| PUT | /api/applications/:id | Update an application |
+| DELETE | /api/applications/:id | Delete an application |
+| POST | /api/ai/match/:applicationId | Upload resume + job description, get AI match score |
 
 ## Author
 
