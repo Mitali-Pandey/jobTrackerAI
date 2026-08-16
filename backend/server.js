@@ -24,7 +24,7 @@ app.use(
 
 // ---------- Test route ----------
 app.get("/", (req, res) => {
-  res.json({ message: "JobTrackr AI API is running 🚀" });
+  res.json({ message: "JobTrackr AI API is running" });
 });
 
 // ---------- Routes (uncomment as you build them) ----------
